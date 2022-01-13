@@ -1,0 +1,11 @@
+<launch>
+    <arg name="input_rgbpoints" default="/points_raw"/>
+    <arg name="output_rgbpoints" default="/mapTF_lidar_points"/>
+    <arg name="publish_frame" default="/map"/>
+
+    <node pkg="tf_lidar2map" type="tf_lidar2map" name="td_lidar2map" output="screen">
+        <param name="publish_frame" value="$(arg publish_frame)"/>
+        <param name="input_rgbpoints" value="$(arg input_rgbpoints)"/>
+        <param name="output_rgbpoints" value="$(arg output_rgbpoints)"/>
+    </node>
+</launch>
